@@ -87,7 +87,7 @@ async function getRecipes() {
   /**************************/
   // A4. TODO - Loop through each recipe in the RECIPE_URLS array constant
   //            declared above
-    for(var recipe in RECIPE_URLS) {
+    for(var i = 0; i < RECIPE_URLS.length; i++) {
       // A5. TODO - Since we are going to be dealing with asynchronous code, create
       //            a try / catch block. A6-A9 will be in the try portion, A10-A11
       //            will be in the catch portion.
@@ -96,7 +96,7 @@ async function getRecipes() {
         //            article on fetch(). NOTE: Fetches are ASYNCHRONOUS, meaning that
         //            you must either use "await fetch(...)" or "fetch.then(...)". This
         //            function is using the async keyword so we recommend "await"
-        let fetchedUrl = await fetch(recipe);
+        let fetchedUrl = await fetch(RECIPE_URLS[i]);
         // A7. TODO - For each fetch response, retrieve the JSON from it using .json().
         //            NOTE: .json() is ALSO asynchronous, so you will need to use
         //            "await" again
