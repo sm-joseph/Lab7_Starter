@@ -81,7 +81,7 @@ async function getRecipes() {
   //            take two parameters - resolve, and reject. These are functions
   //            you can call to either resolve the Promise or Reject it.
   /**************************/
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
   // A4-A11 will all be *inside* the callback function we passed to the Promise
   // we're returning
   /**************************/
@@ -96,6 +96,7 @@ async function getRecipes() {
         //            article on fetch(). NOTE: Fetches are ASYNCHRONOUS, meaning that
         //            you must either use "await fetch(...)" or "fetch.then(...)". This
         //            function is using the async keyword so we recommend "await"
+        let fetchedUrl = await fetch(recipe);
         // A7. TODO - For each fetch response, retrieve the JSON from it using .json().
         //            NOTE: .json() is ALSO asynchronous, so you will need to use
         //            "await" again
