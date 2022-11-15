@@ -102,6 +102,7 @@ async function getRecipes() {
         //            "await" again
         let urlJson = await fetchedUrl.json();
         // A8. TODO - Add the new recipe to the recipes array
+        recipeArr.push(urlJson);
         // A9. TODO - Check to see if you have finished retrieving all of the recipes,
         //            if you have, then save the recipes to storage using the function
         //            we have provided. Then, pass the recipes array to the Promise's
